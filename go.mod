@@ -1,4 +1,4 @@
-module oauth2-logger-proxy
+module github.com/aubelsb2/oauth2-logger-proxy
 
 go 1.14
 
