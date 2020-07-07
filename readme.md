@@ -6,12 +6,18 @@ verbose as it's meant to be used for debugging purposes.
 
 Manager:
 
-        	srv := server.NewDefaultServer(ProxyManager{manager})
+        	srv := server.NewDefaultServer(oauth2_logger_proxy.ProxyManager{manager})
 
 
 ClientStore: 
 
-        	manager.MapClientStorage(ProxyClientStore{dynamo.NewClientStore(c)})
+        	manager.MapClientStorage(oauth2_logger_proxy.ProxyClientStore{dynamo.NewClientStore(c)})
+
+
+Random injector functions:
+
+
+            srv.SetClientInfoHandler(oauth2_logger_proxy.ProxyClientFormHandler(ClientFormHandler))
 
 
 Happy to accept PRs.
